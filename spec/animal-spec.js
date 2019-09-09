@@ -23,26 +23,37 @@ describe('Animal', function() {
   })
 
   it('should decrease food level over time', function() {
-    jasmine.clock().tick(20001);
+    jasmine.clock().tick(60001);
     expect(pet.foodLevel).toEqual(0);
   });
 
   it('should have a food level of 100 after it is fed', function() {
     pet.foodLevel = 50;
     pet.feed();
-    expect(pet.foodLevel).toEqual(100);
+    expect(pet.foodLevel).toEqual(80);
   });
 
   it('hapiness level should decrease over time', function() {
-    jasmine.clock().tick(20001);
+    jasmine.clock().tick(60001);
     expect(pet.happinessLevel).toEqual(0)
   })
 
   it('should have a hapiness level of 100 after it is played with or has slept', function() {
     pet.happinessLevel = 50;
     pet.play();
-    expect(pet.happinessLevel).toEqual(100);
+    expect(pet.happinessLevel).toEqual(80);
   });
 
+  it('should show that a pet is dead if the hunger is less than 0', function() {
+    pet.foodLevel = 1;
+    jasmine.clock().tick(60000);
+    expect(pet.isDead).toEqual(true);
+  });
+
+  it('should show that a pet is depressed if the happiness is less than 0', function() {
+    pet.happinessLevel = 1;
+    jasmine.clock().tick(60000);
+    expect(pet.isDepressed).toEqual(true);
+  });
 
 });

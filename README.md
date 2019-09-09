@@ -22,8 +22,8 @@ _none_
 |:-|:-|:-|
 |Allow user to create a new pet|Enter info (eg. animal type, name, other attributes)& click submit|info about new pet shows up (name, type, hunger level, etc.)|
 |Automatically update hunger level of pet| none (time elapses) | 100 hunger -> 99 hunger  seconds |
-| user can feed a pet | clicked feed button | hunger level goes back up|
-| user can play with pet|click play button| happiness level goes up|
+| user can feed a pet | clicked feed button | hunger level increases by 30|
+| user can play with pet|click play button| happiness level increases by 30|
 |user can put pet to sleep| click sleep button| pet goes to sleep for interval|
 
 

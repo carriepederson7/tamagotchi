@@ -33,29 +33,33 @@ $(document).ready(function() {
     event.preventDefault();
     newPet.feed();
   });
+})
 
-  function attachContactListeners(newPet) {
-    $('div#output').on("click", "button", function() {
-      var id = this.id
-      if(id === "feed"){
-        newPet.feed();
-      }else{
-        newPet.play();
-      }
-    });
-  }
+function attachContactListeners(newPet) {
+  $('div#output').on("click", "button", function() {
+    var id = this.id
+    if(id === "feed"){
+      newPet.feed();
+    }else{
+      newPet.play();
+    }
+  });
+}
 
-
-  function updateHTML(pet) {
-    let newHtml = "";
+function updateHTML(pet) {
+  let newHtml = "";
+  if(pet.isDead === true){
+    newHtml += `<p>${pet.name} is dead.</p>`
+  }else{
+    if(pet.isDepressed === true){
+      newHtml += `<p>${pet.name} is depressed.</p>`;
+    }
     newHtml += `<p>Animal name: ${pet.name}</p>`;
     newHtml += `<br><p>hunger level: ${pet.foodLevel}</p>`;
     newHtml += `<br><p>happiness level: ${pet.happinessLevel}`
     newHtml += `<br><button id= "feed"> Feed </button>`
     newHtml += `<br><button id= "play"> Play </button>`
     newHtml += `<br><button id= "sleep"> Sleep </button>`
-
-    $('div#output').html(newHtml);
-
   }
-})
+  $('div#output').html(newHtml);
+}
