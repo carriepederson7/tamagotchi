@@ -1,4 +1,4 @@
-import { Animal } from './../src/animal.js';
+import Animal from './../src/animal.js';
 
 describe('Animal', function() {
   let pet;

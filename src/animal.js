@@ -1,4 +1,4 @@
-export class Animal {
+export default class Animal {
 
   constructor(name, type){
     this.name = name;
@@ -28,10 +28,5 @@ export class Animal {
       this.happinessLevel-=5;
     }, 1000);
   }
-
-
-
-
-
 
 }
